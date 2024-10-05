@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "portfolio-v2-d4dbe"
-  }
+  },
+  "targets": {
+    "portfolio-v2-d4dbe": {
+      "hosting": {
+        "staging": [
+          "portfolio-v2-d4dbe"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
