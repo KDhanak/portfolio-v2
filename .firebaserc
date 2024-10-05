@@ -6,7 +6,7 @@
     "portfolio-v2-d4dbe": {
       "hosting": {
         "staging": [
-          "portfolio-v2-dev-stage"
+          "portfolio-v2-d4dbe"
         ]
       }
     }
