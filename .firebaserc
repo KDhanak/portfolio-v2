@@ -5,8 +5,8 @@
   "targets": {
     "portfolio-v2-d4dbe": {
       "hosting": {
-        "staging": [
-          "portfolio-v2-d4dbe"
+        "production": [
+          "portfolio-v2-d4dbe-prod"
         ]
       }
     }
