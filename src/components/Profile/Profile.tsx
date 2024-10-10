@@ -3,11 +3,23 @@ import { FaGripLines } from 'react-icons/fa';
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 
-const Profile: React.FC = () => {
+interface ProfileProps {
+    onExperienceClick: () => void;
+}
+
+const Profile: React.FC<ProfileProps> = ({onExperienceClick}) => {
 
     const [selected, setSelected] = useState<string>('About');
 
     const menuItems = ['About', 'Experience', 'Projects'];
+
+    const handleMenuClick = (item: string) => {
+        setSelected(item);
+        if (item === 'Experience') {
+            onExperienceClick();
+        }
+        if (item === 'About') {}
+    }
 
     return(
         <div className="container">
@@ -24,7 +36,7 @@ const Profile: React.FC = () => {
                     className={`flex items-center gap-2 cursor-pointer group ${
                         selected === item ? 'text-tertiary' : ''
                     }`}
-                    onClick={() => setSelected(item)}
+                    onClick={() => handleMenuClick(item)}
                     >
                         <FaGripLines
                         className={`transition-all duration-300 group-hover:w-10 ${

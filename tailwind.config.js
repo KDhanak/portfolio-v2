@@ -8,10 +8,12 @@ export default {
         secondary:  '#DC5F00',
         accent: {
           light:'#EEEEEE',
+          light_2: '#7e8396',
           dark: '#686D76',
-          darker: '#373A40'
+          darker: '#373A40',
+          tertiary_light: '#64dcdc'
         },
-        tertiary: '#088F8F'
+        tertiary: '#088F8F',
       },
       margin: {
         '5p':'5%',
@@ -27,6 +29,8 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }
 
