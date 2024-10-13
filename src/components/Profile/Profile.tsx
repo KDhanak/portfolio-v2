@@ -5,9 +5,11 @@ import { FaLinkedin } from "react-icons/fa";
 
 interface ProfileProps {
     onExperienceClick: () => void;
+    onProjectClick: () => void;
+    onAboutClick: () => void;
 }
 
-const Profile: React.FC<ProfileProps> = ({onExperienceClick}) => {
+const Profile: React.FC<ProfileProps> = ({onExperienceClick, onProjectClick, onAboutClick}) => {
 
     const [selected, setSelected] = useState<string>('About');
 
@@ -18,7 +20,12 @@ const Profile: React.FC<ProfileProps> = ({onExperienceClick}) => {
         if (item === 'Experience') {
             onExperienceClick();
         }
-        if (item === 'About') {}
+        if (item === 'Projects') {
+            onProjectClick();
+        }
+        if (item === 'About') {
+            onAboutClick();
+        }
     }
 
     return(
@@ -29,7 +36,7 @@ const Profile: React.FC<ProfileProps> = ({onExperienceClick}) => {
                 <p className="text-base font-thin text-primary">Passionate and commited Full-Stack Developer who builds classical, top-notch and innovative web-solutions.</p>
             </div>
 
-            <div className="menu mt-20 flex flex-col gap-4">
+            <div className="menu mt-20 w-fit flex flex-col gap-4">
                 {menuItems.map((item) => (
                     <div
                     key={item}

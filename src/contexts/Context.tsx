@@ -3,7 +3,8 @@ import {collection, getDocs} from 'firebase/firestore';
 import { db } from '../services/firebase';
 
 interface FirebaseContextType {
-    data: any[];
+    experiencesData: any[];
+    projectsData: any[];
     loading: boolean;
     error: string | null;
 }
@@ -11,7 +12,8 @@ interface FirebaseContextType {
 const FirebaseContext = createContext<FirebaseContextType | undefined>(undefined);
 
 export const FirebaseProvider: React.FC<{children: ReactNode}> = ({children}) => {
-    const [data, setData] = useState<any[]>([]);
+    const [experiencesData, setExperiencesData] = useState<any[]>([]);
+    const [projectsData, setProjetsData] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -19,10 +21,13 @@ export const FirebaseProvider: React.FC<{children: ReactNode}> = ({children}) =>
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const querySnapshot = await getDocs(collection(db, 'experiences'));
-                const fetchedData = querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data() }));
-                setData(fetchedData);
-                console.log(fetchedData)
+                const [experiencesSnapshot, projectSnapshot] = await Promise.all ([getDocs(collection(db, 'experiences')), getDocs(collection(db, 'projects'))]);
+                const fetchedExperienceData = experiencesSnapshot.docs.map((doc) => ({id: doc.id, ...doc.data() }));
+                const fetchedProjectData = projectSnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+
+                setExperiencesData(fetchedExperienceData);
+                setProjetsData(fetchedProjectData);
+                
             } catch (err: any) {
                 console.error('Error fetching experiences: ', error);
                 setError(err.message);
@@ -35,7 +40,7 @@ export const FirebaseProvider: React.FC<{children: ReactNode}> = ({children}) =>
     }, []);
 
     return (
-        <FirebaseContext.Provider value={{data, loading, error}}>
+        <FirebaseContext.Provider value={{projectsData, experiencesData, loading, error}}>
             {children}
         </FirebaseContext.Provider>
     );

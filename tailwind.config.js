@@ -11,7 +11,8 @@ export default {
           light_2: '#7e8396',
           dark: '#686D76',
           darker: '#373A40',
-          tertiary_light: '#64dcdc'
+          tertiary_light: '#64dcdc',
+          secondary_light: '#f1bf99',
         },
         tertiary: '#088F8F',
       },
