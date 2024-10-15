@@ -6,7 +6,7 @@ import Details from './components/Details/Details';
 import Experience from './components/Details/Experience';
 import Project from './components/Projects/Projects';
 
-function App() {
+const App: React.FC = () => {
     const detailsRef = useRef<HTMLDivElement>(null);
     const experienceRef = useRef<HTMLDivElement>(null);
     const projectRef = useRef<HTMLDivElement>(null);
@@ -32,6 +32,7 @@ function App() {
     return (
         <>
             <AuraEffect />
+            <div className='app-container'>
             <div className="App mx-20p flex h-screen">
                 <div className="Profile my-5p flex-1">
                     <Profile
@@ -52,6 +53,7 @@ function App() {
                         </div>
                     </Details>
                 </div>
+            </div>
             </div>
         </>
     );
