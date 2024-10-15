@@ -1,0 +1,17 @@
+:root {
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(25, 31, 34, 0.4);
+}
+  
+/* Ensure the background stays behind content */
+body {
+position: relative;
+z-index: 1;
+}
+
+#root {
+position: relative;
+z-index: 2; /* Content comes above the background */
+}
+  
