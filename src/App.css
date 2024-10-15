@@ -11,3 +11,9 @@
     z-index: -1; /* Behind all content */
     overflow: hidden; /* No scrolling or layout shift */
   }
+
+  html {
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(25, 31, 34, 0.4);
+  }  
