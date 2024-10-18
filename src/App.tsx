@@ -38,7 +38,7 @@ const App: React.FC = () => {
                         <Profile
                             onExperienceClick={scrollToExperience}
                             onProjectClick={scrollToProject}
-                            onAboutClick={resetScrollBar} 
+                            onAboutClick={resetScrollBar}
                         />
                     </div>
                     <div className="Details flex-1 overflow-y-auto scrollbar-hide pt-16 w-full mb-8" ref={detailsRef}>
@@ -49,6 +49,11 @@ const App: React.FC = () => {
                                 </div>
                                 <div className="Projects flex-1 mt-16" ref={projectRef}>
                                     <Project />
+                                </div>
+                                <div className='relative font-light text-xs text-accent-light_2 w-96'>
+                                    <span>
+                                        Build using <span className="font-bold">Vite+TypeScript</span> along with <span className="font-bold">TailwindCSS</span>, deployed with <span className="font-bold">Firebase</span>.
+                                    </span>
                                 </div>
                             </div>
                         </Details>

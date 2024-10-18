@@ -32,7 +32,7 @@ const Profile: React.FC<ProfileProps> = ({onExperienceClick, onProjectClick, onA
         <div className="container">
             <p className="text-5xl font-semibold text-primary pb-4">Kishan Dhanak</p>
             <p className="text-xl font-medium text-secondary pb-4">Junior Full-Stack Engineer</p>
-            <div className="synopsis-container w-1/2 text-start">
+            <div className="synopsis-container w-9/12 text-start">
                 <p className="text-base font-thin text-primary">Passionate and commited Full-Stack Developer who builds classical, top-notch and innovative web-solutions.</p>
             </div>
 
