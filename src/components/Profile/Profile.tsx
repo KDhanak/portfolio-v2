@@ -32,7 +32,7 @@ const Profile: React.FC<ProfileProps> = ({onExperienceClick, onProjectClick, onA
         <div className="container">
             <p className="text-5xl font-semibold text-primary pb-4">Kishan Dhanak</p>
             <p className="text-xl font-medium text-secondary pb-4">Junior Full-Stack Engineer</p>
-            <div className="synopsis-container w-1/2 text-justify">
+            <div className="synopsis-container w-1/2 text-start">
                 <p className="text-base font-thin text-primary">Passionate and commited Full-Stack Developer who builds classical, top-notch and innovative web-solutions.</p>
             </div>
 
@@ -59,12 +59,12 @@ const Profile: React.FC<ProfileProps> = ({onExperienceClick, onProjectClick, onA
                 ))}
             </div>
 
-            <div className='social-media flex fixed gap-4 bottom-20'>
+            <div className='social-media flex fixed gap-4 lg:bottom-20 lg:top-auto lg:right-auto top-8 right-16'>
                 <a href='https://github.com/KDhanak' target='_blank' rel='noopener noreferrer'>
-                    <FaGithub className='size-7 cursor-pointer' />
+                    <FaGithub className='lg:size-7 cursor-pointer size-5' />
                 </a>
                 <a href='https://www.linkedin.com/in/kishandhanak306/' target='_blank' rel='noopener noreferrer'>
-                    <FaLinkedin className='size-7 cursor-pointer' />
+                    <FaLinkedin className='lg:size-7 cursor-pointer size-5' />
                 </a>
             </div>
         </div>

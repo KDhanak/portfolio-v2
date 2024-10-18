@@ -5,7 +5,6 @@ import { CgExternal } from "react-icons/cg";
 
 const Experience: React.FC = () => {
     const { experiencesData, loading, error } = useFirebaseContext();
-    console.log(experiencesData);
 
     const sortedItems = experiencesData.sort((a,b) => {
         if (a.isPresent && !b.isPresent) return -1;
@@ -34,9 +33,9 @@ const Experience: React.FC = () => {
                                 <br />
                                 <span className='text-accent-light_2'>{item.description}</span>
                                 <br />
-                                <div className='tags-container flex flex-wrap gap-0.5'>
+                                <div className='tags-container flex flex-wrap gap-0.5 mt-5'>
                                     {item.tags?.map((tag: string) => (
-                                        <span className="inline-block text-xs font-medium mb-1.5 me-2 px-3 py-1 rounded bg-opacity-30 bg-accent-secondary_light text-secondary">{tag}</span>
+                                        <span key={tag} className="inline-block text-xs font-medium mb-1.5 me-2 px-3 py-1 rounded bg-opacity-30 bg-accent-secondary_light text-accent-light border border-accent-tertiary_light">{tag}</span>
                                     ))}
                                 </div>
                             </span>
