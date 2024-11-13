@@ -52,7 +52,7 @@ const App: React.FC = () => {
                                 </div>
                                 <div className='relative font-light text-xs text-accent-light_2 w-96'>
                                     <span>
-                                        Build using <span className="font-bold">Vite+TypeScript</span> along with <span className="font-bold">TailwindCSS</span>, deployed with <span className="font-bold">Firebase</span>.
+                                        Built using <span className="font-bold">Vite+TypeScript</span> along with <span className="font-bold">TailwindCSS</span>, deployed with <span className="font-bold">Firebase</span>.
                                     </span>
                                 </div>
                             </div>
