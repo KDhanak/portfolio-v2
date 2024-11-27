@@ -41,7 +41,7 @@ const App: React.FC = () => {
                             onAboutClick={resetScrollBar}
                         />
                     </div>
-                    <div className="Details flex-1 overflow-y-auto scrollbar-hide pt-16 w-full mb-8" ref={detailsRef}>
+                    <div className="Details flex-1 pr-3 pt-16 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-accent-darker [&::-webkit-scrollbar-thumb]:bg-primary" ref={detailsRef}>
                         <Details>
                             <div className="flex-col">
                                 <div className="Experience flex-1 mt-16" ref={experienceRef}>
