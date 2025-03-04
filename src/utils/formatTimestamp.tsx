@@ -1,12 +1,12 @@
 import { Timestamp } from "firebase/firestore";
 
 export const formatFirestoreTimestamp = (startDate: Timestamp | null, endDate: Timestamp | null): string => {
-    if (!startDate){
+    if (!startDate) {
         return '';
     }
 
     if (typeof startDate.toDate !== 'function' || (endDate && typeof endDate.toDate !== 'function')) {
-        return ''; 
+        return '';
     }
 
     const start = startDate.toDate();
@@ -14,26 +14,16 @@ export const formatFirestoreTimestamp = (startDate: Timestamp | null, endDate: T
 
     const startYear = start.getFullYear();
     const endYear = end.getFullYear();
-    const startMonth = start.getMonth();
-    const endMonth = end.getMonth();
-
-    const durationInMonths = (endYear - startYear) * 12 + (endMonth - startMonth)
+    const startMonth = start.toLocaleString('en-us', { month: 'short' });
+    const endMonth = end.toLocaleString('en-us', { month: 'short' });
 
     if (!endDate) {
-        return `${startYear} - Present`;
+        return `${startMonth} ${startYear} - Present`;
     }
 
-    if (durationInMonths >= 12) {
-        return `${startYear} - ${endYear}`
+    if (startYear === endYear) {
+        return `${startMonth}-${endMonth} ${startYear}`;
+    } else {
+        return `${startMonth} ${startYear} - ${endMonth} ${endYear}`;
     }
-
-    if (durationInMonths > 0) {
-        const startMonthName = start.toLocaleString('en-us', {month: 'short'});
-        const endMonthName = end.toLocaleString('en-us', {month: 'short'}); 
-        return `${startMonthName} - ${endMonthName} ${endYear}`;
-
-    }
-
-    const singleMonth = end.toLocaleString('en-us', { month: 'long', year: 'numeric' });
-    return singleMonth;
 };
