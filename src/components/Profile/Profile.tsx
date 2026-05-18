@@ -59,7 +59,7 @@ const Profile: React.FC<ProfileProps> = ({ onExperienceClick, onProjectClick, on
 
             <div className='flex fixed flex-col lg:bottom-32 lg:top-auto lg:right-auto top-10 right-16'>
                 <div className='group'>
-                    <a className='flex cursor-pointer text-secondary transition-all duration-300 font-normal group-hover:text-accent-tertiary_light' href='https://storage.googleapis.com/portfolio-v2-static-data/Resume-Kishan.docx'>
+                    <a className='flex cursor-pointer text-secondary transition-all duration-300 font-normal group-hover:text-accent-tertiary_light' href='https://storage.googleapis.com/portfolio-v2-static-data/Resume.docx'>
                         <p className='font-medium'>My Resume</p>
                         <HiDownload className='mt-1 ml-1' />
                     </a>
