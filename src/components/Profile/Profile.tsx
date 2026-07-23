@@ -65,7 +65,7 @@ const Profile: React.FC<ProfileProps> = ({ onExperienceClick, onProjectClick, on
                 <p className="text-base font-thin text-primary">Passionate and commited Full-Stack Developer who builds classical, top-notch and innovative web-solutions.</p>
             </div>
 
-            <div className="menu mt-10 lg:mt-20 w-fit flex flex-col gap-4">
+            <div className="menu mt-10 lg:mt-20 w-fit hidden lg:flex flex-col gap-4">
                 {menuItems.map((item) => (
                     <div
                         key={item}
