@@ -27,21 +27,24 @@ const App: React.FC = () => {
         if (detailsRef.current) {
             detailsRef.current.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        // On mobile the page scrolls normally (no inner Details scroll pane),
+        // so scroll the window back to the top as well.
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <>
             <AuraEffect />
             <div className='app-container'>
-                <div className="App mx-15p lg:flex h-screen">
-                    <div className="Profile mr-5 my-5p flex-1">
+                <div className="App mx-6 sm:mx-10 lg:mx-15p lg:flex lg:h-screen">
+                    <div className="Profile lg:mr-5 my-5p flex-1">
                         <Profile
                             onExperienceClick={scrollToExperience}
                             onProjectClick={scrollToProject}
                             onAboutClick={resetScrollBar}
                         />
                     </div>
-                    <div className="Details flex-1 pr-3 pt-16 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-accent-darker [&::-webkit-scrollbar-thumb]:bg-primary" ref={detailsRef}>
+                    <div className="Details flex-1 lg:pr-3 pt-8 lg:pt-16 pb-16 lg:pb-0 lg:overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-accent-darker [&::-webkit-scrollbar-thumb]:bg-primary" ref={detailsRef}>
                         <Details>
                             <div className="flex-col">
                                 <div className="Experience flex-1 mt-16" ref={experienceRef}>
@@ -50,7 +53,7 @@ const App: React.FC = () => {
                                 <div className="Projects flex-1 mt-16" ref={projectRef}>
                                     <Project />
                                 </div>
-                                <div className='relative font-light text-xs text-accent-light_2 w-96'>
+                                <div className='relative font-light text-xs text-accent-light_2 w-full lg:w-96'>
                                     <span>
                                         Built using <span className="font-bold">Vite+TypeScript</span> along with <span className="font-bold">TailwindCSS</span>, deployed with <span className="font-bold">Firebase</span>.
                                     </span>
