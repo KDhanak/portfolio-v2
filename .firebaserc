@@ -7,6 +7,9 @@
       "hosting": {
         "staging": [
           "portfolio-v2-d4dbe"
+        ],
+        "production": [
+          "portfolio-v2-d4dbe"
         ]
       }
     }
