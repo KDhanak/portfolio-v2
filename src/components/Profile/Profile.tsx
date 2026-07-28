@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaGripLines, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { FaGithub } from "react-icons/fa6";
-import { HiDownload } from "react-icons/hi";
 
 interface ProfileProps {
     onExperienceClick: () => void;
@@ -87,12 +86,6 @@ const Profile: React.FC<ProfileProps> = ({ onExperienceClick, onProjectClick, on
 
 
             <div className='flex flex-col gap-3 mt-10 lg:mt-0 lg:gap-0 lg:fixed lg:bottom-32 lg:top-auto lg:right-auto'>
-                <div className='group w-fit'>
-                    <a className='flex cursor-pointer text-secondary transition-all duration-300 font-normal group-hover:text-accent-tertiary_light' href='https://storage.googleapis.com/portfolio-v2-static-data/Resume.docx'>
-                        <p className='font-medium'>My Resume</p>
-                        <HiDownload className='mt-1 ml-1' />
-                    </a>
-                </div>
                 <div className='social-media flex gap-4 lg:fixed lg:bottom-20 lg:top-auto lg:right-auto'>
                     <a href='https://github.com/KDhanak' target='_blank' rel='noopener noreferrer'>
                         <FaGithub className='lg:size-7 cursor-pointer size-6' />
